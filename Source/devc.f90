@@ -194,7 +194,7 @@ TYPE CONTROL_TYPE
 !   REAL(EB) :: DT_SAMPLING !<Interval of sampling
    REAL(EB) :: UPPER_PID !<PID upper bound
    REAL(EB) :: LOWER_PID !<PID lower bound
-   REAL(EB) :: DIFFERENTIAL_GAIN !<Differential gain for a PID control function
+!   REAL(EB) :: DIFFERENTIAL_GAIN !<Differential gain for a PID control function
    REAL(EB) :: PERCENTILE        !< Percentile value for PERCENTILE function
    REAL(EB) :: PREVIOUS_VALUE=-9.E30_EB !<Prior timestep value used in computing the time derivative term for a PID control function
    REAL(EB) :: INTEGRAL=0._EB !<Current value of the time integral term for a PID control function
