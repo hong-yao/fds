@@ -164,6 +164,8 @@ TYPE CONTROL_TYPE
    LOGICAL :: INITIAL_STATE=.FALSE. !< Initial logical state of the control function assigned at the start of the calculation
    LOGICAL :: CURRENT_STATE=.FALSE. !< Current timestep logical state of the control function
    LOGICAL :: PRIOR_STATE=.FALSE.   !< Prior timestep logical state of the control function
+   LOGICAL :: STATE_PID=.FALSE.     !< Current timestep logical state of the PID controller
+   LOGICAL :: PREV_STATE_PID=.FALSE.!< Prior timestep logical state of the PID controller
    LOGICAL :: LATCH=.TRUE.          !< Control function can only change state once
    LOGICAL :: UPDATED=.FALSE.       !< Control function has been updatead in the current timestep
    INTEGER :: CONTROL_INDEX=0       !< Indicates the type of control function
@@ -188,6 +190,10 @@ TYPE CONTROL_TYPE
    REAL(EB) :: INSTANT_VALUE !<Current mathematical value of the control function
    REAL(EB) :: PROPORTIONAL_GAIN !<Proportional gain for a PID control function
    REAL(EB) :: INTEGRAL_GAIN !<Intregal gain for a PID control function
+   REAL(EB) :: DIFFERENTIAL_GAIN !<Differential gain for a PID control function
+!   REAL(EB) :: DT_SAMPLING !<Interval of sampling
+   REAL(EB) :: UPPER_PID !<PID upper bound
+   REAL(EB) :: LOWER_PID !<PID lower bound
    REAL(EB) :: DIFFERENTIAL_GAIN !<Differential gain for a PID control function
    REAL(EB) :: PERCENTILE        !< Percentile value for PERCENTILE function
    REAL(EB) :: PREVIOUS_VALUE=-9.E30_EB !<Prior timestep value used in computing the time derivative term for a PID control function
